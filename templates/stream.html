@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid">
+<br>
+<center>
+<h1> STREAMERS </h1>
+<br>
+<hr>
+	{% for i in streaming_users %}
+	<form role="form" method="POST" action="{{url_for('turnup')}}">
+		<input name="url" id="url" value="{{i['url']}}" class="hidden">
+		<input name="username" id="username" value="{{i['username']}}" class="hidden">
+		<button id="songbtn" name="songbtn" class="btn btn-warning" type="submit"> {{i['username']}} </button>
+		<br>
+		<hr>
+	</form>
+	{% endfor %}
+</center>
+</div>
+{% endblock %}

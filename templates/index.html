@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<center>
+<div class="container-fluid">
+
+<h2>SEARCH FOR A SONG</h2>
+<hr>
+<form role="form" method="POST" action="">
+	<div class="row">
+		<div class="input-group">
+		<input class="form-control transparent-input input-lg" placeholder="Search for song or artist . . ." type="text" name="term" id="term">
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<span class="input-group-btn">
+			<button  id="kbtn" name="kbtn" class="btn btn-warning hidden" type="submit">PRESS ENTER</button>
+		</span>
+	</div>
+</form>
+
+
+
+</div>	
+</center>
+
+		
+<script type="text/javascript">
+$( "#term" ).keypress(function(){
+ var def = $(this).val()
+   $("#kbtn").removeClass("hidden")
+});
+</script>
+
+
+{% endblock %}

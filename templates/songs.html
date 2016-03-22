@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid">
+	<center>
+	<h1> Pick a song </h1>
+	<hr>
+		{% if songs %}
+			<center>
+				<div class="container-fluid">
+					{% for song in songs %}
+					<!-- <h1>{{song['title']}}</h1> -->
+					<form role="form" method="POST" action="play">
+						<input name="songid" id="songid" value="{{song['id']}}" class="hidden">
+						<button id="songbtn" name="songbtn" class="btn btn-warning" type="submit">{{song['title']}} </button>
+						<br>
+						<hr>
+					</form>
+					{% endfor %}
+				</div>
+			</center>
+		{% endif %}
+	</center>
+
+</div>
+
+<script type="text/javascript">
+	$( "#def" ).keypress(function(){
+ var def = $(this).val()
+   $("#kbtn").removeClass("hidden")
+
+});
+</script>
+
+{% endblock %}
